@@ -32,20 +32,25 @@ const combineColors = (l1: string, l2: string) => {
     }
 }
 
-let colorCombination = (username: string): object => {
+type colors = {
+    colors: number[] | undefined,
+    index: number | undefined
+}
+
+let colorCombination = (username: string): colors => {
     if (username.split("").includes(" ")) {
         let splitUsername = username.split("");
-        let index = collectionIndex(splitUsername[1]);
+        let index = parseInt(collectionIndex(splitUsername[1]));
         let colors = combineColors(splitUsername[0].charAt(0), splitUsername[1].charAt(1));
-        return { index, colors };
+        return { colors: colors, index: index };
     } else {
 
-        let index = collectionIndex(username);
+        let index = parseInt(collectionIndex(username));
         let colors = combineColors(username.charAt(0), username.charAt(1));
-        return { index, colors };
+        return { colors: colors, index: index };
     }
 }
 
-// console.log(colorCombination("igirimpuhweaime"));
+// console.log(colorCombination("igirimpuhweaime")); //return index and colors
 
 export default colorCombination;

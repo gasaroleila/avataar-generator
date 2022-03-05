@@ -1,48 +1,32 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
 import { useState } from "react";
+import queryString from "query-string";
+
 import "../App.css";
-import colorCombination from "../utils/colorCombination";
-import colorCollection from "../utils/colors/colorCollection";
 
 function Avatar() {
-  const [username, setUsername] = useState<string>("EloiMizero");
-  const [colorSection, setColorSection] = useState<any>();
-  const [bgColor, setBgColor] = useState<any>();
-  const [innerColor, setInnerColor] = useState<any>()
-  const [colors, setColors] = useState<any>({});
-  let outerRef = useRef<HTMLDivElement>(null);
-  let innerRef = useRef<HTMLDivElement>(null);
+    let frontColor;
+    let backColor;
 
-  useEffect(() => {
-    setColors(colorCombination(username));
-      setColorSection(colorCollection[parseInt(colors?.index)])
-    console.log(colorSection)
-    if (colors?.colors) {
-      setBgColor(colorSection[parseInt(colors?.colors[0])])
-      console.log(bgColor)
-      setInnerColor(colorSection[parseInt(colors?.colors[1])])
-    }
-  }, []);
+    frontColor = Math.floor(Math.random() * 16777215).toString(16);
+    backColor = Math.floor(Math.random() * 16777215).toString(16);
 
-  useLayoutEffect(() => {
-    if (outerRef.current && innerRef.current) {
-      outerRef.current.style.backgroundColor = bgColor;
-      innerRef.current.style.backgroundColor = innerColor;
+    document.documentElement.style.setProperty("--main-front-color", "#" + frontColor);
+    while ("#" + frontColor == "#" + backColor && frontColor < "B0BEC5") {
+        backColor = Math.floor(Math.random() * 16777215).toString(16);
+        if ("#" + backColor == "#e1e3ee") {
+            frontColor = Math.floor(Math.random() * 16777215).toString(16);
+        } else if ("#" + frontColor == "#e1e3ee") {
+            backColor = Math.floor(Math.random() * 16777215).toString(16);
+        }
     }
-  });
-  return (
-    <>
-      <input
-        className="inputEl"
-        placeholder="Enter your name"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      {username}
-      <div className="outer" ref={outerRef}>
-        <div className="inner" ref={innerRef}></div>
-      </div>
-    </>
-  );
+    document.documentElement.style.setProperty("--main-back-color", "#d1e3ee");
+    return (
+        <div className="outer">
+            <div className="inner"></div>
+            <div className="trunk"></div>
+        </div>
+    );
 }
 
 export default Avatar;

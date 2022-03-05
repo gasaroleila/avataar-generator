@@ -1,23 +1,35 @@
+:root {
+    --main-front-color:#0d0e3a;
+    --main-back-color:#d1e3ee;
+}
+body {
+    background-color: rgb(217, 231, 235);
+}
 .outer {
-  width: 412px;
+  width: 422px;
   height: 412px;
   margin: 20px auto;
+  overflow: hidden;
   position: relative;
-  background: rgb(228, 210, 210);
+  background: var(--main-back-color);
 }
 .inner {
-  background: blue;
+  background: var(--main-front-color);
   border-radius: 50%;
   position: absolute;
-  top: 32%;
-  left: 40%;
-  height: 100px;
-  width: 100px;
-}
-.inputEl {
-  margin: 5em;
+  top: 10%;
+  left: 33%;
+  height: 150px;
   width: 150px;
-  padding: .5em;
-  outline: none;
-  border: 1px solid #eee;
+}
+.trunk {
+    background: var(--main-front-color);
+    border-top-right-radius: 100%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin: auto;
+    margin-top: 55%;
+    height: 100%;
+    width: 98%; 
 }
