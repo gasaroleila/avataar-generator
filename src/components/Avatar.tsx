@@ -1,13 +1,12 @@
-import React, { useRef, useEffect, useLayoutEffect } from "react";
-import { useState } from "react";
-import queryString from "query-string";
-
+import * as colorCombinator from '../utils/colorCombination';
 import "../App.css";
+import { useState } from 'react';
 
 function Avatar() {
+  const [name, setName] = useState('Leila')
     let frontColor;
     let backColor;
-
+    console.log(colorCombinator.returnColors('Leila'))
     frontColor = Math.floor(Math.random() * 16777215).toString(16);
     backColor = Math.floor(Math.random() * 16777215).toString(16);
 

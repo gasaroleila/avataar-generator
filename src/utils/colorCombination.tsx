@@ -1,56 +1,54 @@
-// 1. Getting to know the color to pick
-const collectionIndex = (letter: string) => {
-    return letter.charAt(0).charCodeAt(0).toString().split("").slice(-1)[0]
+import * as crypto from 'crypto';
+import * as colors from './colors';
+
+// Get a valid seed
+const getValidSeed = (name:any) => {
+    let hash = crypto.createHash('md5').update(name).digest('hex');
+    let seed = String(hash.replace(/\D/g,''))
+    return seed;
 }
 
-// 2. Invert colors or not
-const invertColors = (letter1: string, letter2: string) => {
-    if (letter1 > letter2) {
-        return true;
-    }
-    return false;
+// Getting index level 1
+const getColorObject = (dig_one:any) => {
+    let index1:number;
+    index1 = dig_one == 9 ? dig_one : dig_one + 1;
+    console.log('index'+index1)
+    return colors.colors[index1];
 }
 
-// 3. Return combination of colors
-const combineColors = (l1: string, l2: string) => {
-    if (invertColors(l1, l2)) {
-        if (l2 == "m") {
-            return [700, 200];
-        } else if (l2 > "m") {
-            return [800, 100];
-        } else if (l2 < "m") {
-            return [600, 50];
-        }
+// Getting index level 2
+const getExactColor = (dig_one:any, dig_two:any) => {
+    let index2;
+    let binaryValue = dig_two.toString(2) == 0 ? 0 : dig_two.toString(2);
+    let colorObject = getColorObject(dig_one);
+    if (binaryValue == 0) {
+        index2 = 1;
+        return colorObject[index2];
     } else {
-        if (l1 == "m") {
-            return [200, 700];
-        } else if (l1 > "m") {
-            return [100, 800];
-        } else if (l1 < "m") {
-            return [50, 600];
+        index2 = Number(binaryValue[0]) + Number(binaryValue[1]);
+        return colorObject[index2];
+    }
+}
+export const returnColors = (name:string) => {
+    let seed = getValidSeed(name);
+    let colorObj;
+    if (seed.length <= 1) {
+        colorObj = { bg: "#FFFFFF", front: "#0D4D8C" };
+    } else {
+        let dig_one = Number(seed[0]);
+        let dig_two = Number(seed[1]);
+
+        let color = getExactColor(dig_one, dig_two);
+        if(dig_one >= dig_two) {
+            colorObj = { bg: "#FFFFFF", front: color };
+        }else {
+            colorObj = { bg: color, front: "#FFFFFF" }
         }
     }
+
+    return colorObj
 }
 
-type colors = {
-    colors: number[] | undefined,
-    index: number | undefined
-}
+// console.log(returnColors("Leila"));
+// console.log(returnColors("leila"));
 
-let colorCombination = (username: string): colors => {
-    if (username.split("").includes(" ")) {
-        let splitUsername = username.split("");
-        let index = parseInt(collectionIndex(splitUsername[1]));
-        let colors = combineColors(splitUsername[0].charAt(0), splitUsername[1].charAt(1));
-        return { colors: colors, index: index };
-    } else {
-
-        let index = parseInt(collectionIndex(username));
-        let colors = combineColors(username.charAt(0), username.charAt(1));
-        return { colors: colors, index: index };
-    }
-}
-
-// console.log(colorCombination("igirimpuhweaime")); //return index and colors
-
-export default colorCombination;
