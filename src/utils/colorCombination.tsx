@@ -1,12 +1,12 @@
-import { AES } from 'crypto-ts';
+import {sha256} from 'crypto-hash';
 
 import * as colors from './colors';
 
 // Get a valid seed
-const getValidSeed = (name: any) => {
-    const hash = AES.encrypt(name, 'key').toString();
-    let seed = String(hash.replace(/\D/g, ''))
-    return seed;
+const getValidSeed = async (name: any) => {
+    let hash = await sha256('🦄');
+        let seed = String(hash.replace(/\D/g, ''))
+        return seed;
 }
 
 // Getting index level 1
@@ -29,8 +29,8 @@ const getExactColor = (dig_one: any, dig_two: any) => {
         return colorObject[index2];
     }
 }
-export const returnColors = (name: string) => {
-    let seed = getValidSeed(name);
+export const returnColors = async (name: string) => {
+    let seed = await getValidSeed(name);
     let colorObj;
     if (seed.length <= 1) {
         colorObj = { bg: "#FFFFFF", front: "#0D4D8C" };

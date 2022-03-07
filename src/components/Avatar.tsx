@@ -2,7 +2,7 @@ import * as colorCombinator from '../utils/colorCombination';
 import "../App.css";
 import { useState } from 'react';
 
-function Avatar() {
+function Avatar () {
   const [name, setName] = useState('Leila')
     let frontColor;
     let backColor;
