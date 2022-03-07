@@ -1,10 +1,10 @@
-import { SHA256 } from 'crypto-ts';
+import { AES } from 'crypto-ts';
 
 import * as colors from './colors';
 
 // Get a valid seed
 const getValidSeed = (name: any) => {
-    const hash = SHA256(name).toString();
+    const hash = AES.encrypt(name, 'key').toString();
     let seed = String(hash.replace(/\D/g, ''))
     return seed;
 }
@@ -31,8 +31,6 @@ const getExactColor = (dig_one: any, dig_two: any) => {
 }
 export const returnColors = (name: string) => {
     let seed = getValidSeed(name);
-
-
     let colorObj;
     if (seed.length <= 1) {
         colorObj = { bg: "#FFFFFF", front: "#0D4D8C" };
@@ -50,6 +48,8 @@ export const returnColors = (name: string) => {
 
     return colorObj
 }
+
+
 
 // console.log(returnColors("Leila"));
 // console.log(returnColors("leila"));
