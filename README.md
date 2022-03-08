@@ -20,3 +20,7 @@
    ```sh
    npm start
    ```
+3. Resources
+```sh
+   https://stackoverflow.com/questions/94037/convert-character-to-ascii-code-in-javascript
+   ```
