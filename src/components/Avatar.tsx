@@ -1,6 +1,7 @@
 import * as colorCombinator from '../utils/colorCombination';
 import "../App.css";
 
+// ASK OTHERS FOR IDEAS (ABOUT GEN. THE AVATARS)
 function Avatar() {
     let username = window.location.pathname.slice(1);
     let colors = colorCombinator.returnColors(username ? username : "default");
