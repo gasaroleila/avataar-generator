@@ -4,7 +4,7 @@ export const colors: any = [
         2: "#2DAC74",
     },
     {
-        1: "#0DD4C4",
+        1: "#005c47",
         2: "#1D1D1D",
     },
     {

@@ -1,10 +1,13 @@
 import * as colors from './colors';
 
 // Get a valid seed
-const getValidSeed = (name: any) => {
+const getValidSeed = (name: string) => {
     let firstLetter = String(name.charAt(0).charCodeAt(0)).slice(0,2);
     let secondLetter = String(name.charAt(1).charCodeAt(0));
     let seed = firstLetter + secondLetter;
+    console.log('fletter' + firstLetter)
+    console.log('sletter'+secondLetter)
+    
     return seed;
 }
 
@@ -12,8 +15,6 @@ const getValidSeed = (name: any) => {
 const getColorObject = (dig_one: any) => {
     let index1: number;
     index1 = (dig_one < 8) ? dig_one : dig_one - 1;
-    
-    
     return colors.colors[index1];
 }
 
@@ -22,6 +23,9 @@ const getExactColor = (dig_one: any, dig_two: any) => {
     let index2;
     let binaryValue = dig_two.toString(2) == 0 ? 0 : dig_two.toString(2);
     let colorObject = getColorObject(dig_one);
+    console.log('obj' + colorObject[0])
+    console.log('obj'+colorObject[1])
+    
 
     if (colorObject) {
         if (binaryValue == 0) {
@@ -42,14 +46,20 @@ export const returnColors = (name: string) => {
         let dig_one = Number(seed[0]);
         let dig_two = Number(seed[1]);
 
+        console.log('digOne' + dig_one)
+        console.log('digTwo'+dig_two)
+        
+
         let color = getExactColor(dig_one, dig_two);
+        console.log('color'+color)
         if (dig_one >= dig_two) {
             colorObj = { bg: "#FFFFFF", front: color };
         } else {
             colorObj = { bg: color, front: "#FFFFFF" }
         }
     }
-
+   
+    
     return colorObj
 }
 
