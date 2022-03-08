@@ -791,6 +791,11 @@
   dependencies:
     "js-tokens" "^3.0.0 || ^4.0.0"
 
+"md5-hash@^1.0.1":
+  "integrity" "sha1-lX1KmZh/qHHtRRWDNgr1EYuq1yU="
+  "resolved" "https://registry.npmjs.org/md5-hash/-/md5-hash-1.0.1.tgz"
+  "version" "1.0.1"
+
 "merge2@^1.3.0":
   "integrity" "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg=="
   "resolved" "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
@@ -935,7 +940,7 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
 
-"react-dom@^17.0.2":
+"react-dom@^17.0.2", "react-dom@>=16.0.0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -944,12 +949,17 @@
     "object-assign" "^4.1.1"
     "scheduler" "^0.20.2"
 
+"react-hash-string@^1.0.0":
+  "integrity" "sha512-//3l11uhPA2YmOVYlbm5A4O2tQxclhupm/pid6iUEHKACwhI579FWMpmvVLuLLntshqNeSzWzSCBMdarJi7JlQ=="
+  "resolved" "https://registry.npmjs.org/react-hash-string/-/react-hash-string-1.0.0.tgz"
+  "version" "1.0.0"
+
 "react-refresh@^0.11.0":
   "integrity" "sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
   "version" "0.11.0"
 
-"react@^17.0.2", "react@17.0.2":
+"react@^17.0.2", "react@>=16.0.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
