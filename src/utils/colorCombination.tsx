@@ -1,6 +1,3 @@
-import {
-    hashString,
-} from 'react-hash-string';
 import * as colors from './colors';
 import md5 from 'md5-hash'
 

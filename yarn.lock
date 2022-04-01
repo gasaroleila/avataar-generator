@@ -575,9 +575,9 @@
   dependencies:
     "is-arrayish" "^0.2.1"
 
-"esbuild-windows-64@0.14.23":
-  "integrity" "sha512-JtIT0t8ymkpl6YlmOl6zoSWL5cnCgyLaBdf/SiU/Eg3C13r0NbHZWNT/RDEMKK91Y6t79kTs3vyRcNZbfu5a8g=="
-  "resolved" "https://registry.npmjs.org/esbuild-windows-64/-/esbuild-windows-64-0.14.23.tgz"
+"esbuild-linux-64@0.14.23":
+  "integrity" "sha512-H0gztDP60qqr8zoFhAO64waoN5yBXkmYCElFklpd6LPoobtNGNnDe99xOQm28+fuD75YJ7GKHzp/MLCLhw2+vQ=="
+  "resolved" "https://registry.npmjs.org/esbuild-linux-64/-/esbuild-linux-64-0.14.23.tgz"
   "version" "0.14.23"
 
 "esbuild@^0.14.14":
@@ -940,7 +940,7 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
 
-"react-dom@^17.0.2", "react-dom@>=16.0.0":
+"react-dom@^17.0.2":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -949,17 +949,12 @@
     "object-assign" "^4.1.1"
     "scheduler" "^0.20.2"
 
-"react-hash-string@^1.0.0":
-  "integrity" "sha512-//3l11uhPA2YmOVYlbm5A4O2tQxclhupm/pid6iUEHKACwhI579FWMpmvVLuLLntshqNeSzWzSCBMdarJi7JlQ=="
-  "resolved" "https://registry.npmjs.org/react-hash-string/-/react-hash-string-1.0.0.tgz"
-  "version" "1.0.0"
-
 "react-refresh@^0.11.0":
   "integrity" "sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
   "version" "0.11.0"
 
-"react@^17.0.2", "react@>=16.0.0", "react@17.0.2":
+"react@^17.0.2", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
