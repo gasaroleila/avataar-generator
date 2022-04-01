@@ -11,6 +11,7 @@ body {
   margin: 20px auto;
   overflow: hidden;
   position: relative;
+  border-radius: 3px;
   background: var(--main-back-color);
 }
 .inner {
