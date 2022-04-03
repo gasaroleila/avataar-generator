@@ -27,7 +27,7 @@ export const colors: any = [
     },
     {  //6
         1: "#1D9CD4",
-        2: "#8d99ae",
+        2: "#8cd9ae",
 
     },
     {   //7
@@ -36,7 +36,7 @@ export const colors: any = [
 
     },
     {  //8
-        1: "#f1faee",
+        1: "#040a36",
         2: "#1b3a4b",
     }
 ]

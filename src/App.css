@@ -1,9 +1,9 @@
 :root {
-    --main-front-color:#0d0e3a;
+    --main-front-color:#040a36;
     --main-back-color:#d1e3ee;
 }
 body {
-    background-color: rgb(32, 32, 32);
+    background-color: #202020;
 }
 .outer {
   width: 422px;
@@ -18,19 +18,19 @@ body {
   background: var(--main-front-color);
   border-radius: 50%;
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 33%;
   height: 158px;
   width: 158px;
 }
 .trunk {
     background: var(--main-front-color);
-    border-top-right-radius: 100%;
-    border-top-left-radius: 100%;
+    border-top-right-radius: 72%;
+    border-top-left-radius: 72%;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     margin: auto;
-    margin-top: 55%;
-    height: 85%;
-    width: 99%;
+    margin-top: 48%;
+    height: 98%;
+    width: 100%;
 }
